@@ -1,0 +1,46 @@
+{{ 'component-slick-slider.css' | asset_url | stylesheet_tag }}
+
+<section>
+  <div class="slick-slider">
+    <div class="container carousel">
+      <ul>
+        {% for block in section.blocks %}
+          <li class="slide">
+            <img src="{{ block.settings.image | image_url }}">
+          </li>
+        {% endfor %}
+      </ul>  
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Slick Slider",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Slick Slider"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Slide",
+        "type": "slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image" 
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Slick Slider" 
+      }
+    ]
+  }
+{% endschema %}

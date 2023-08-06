@@ -66,10 +66,35 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "13bb0ba5-db84-4a1d-89f6-3352c19c84f4": {
+      "type": "slick-slider",
+      "blocks": {
+        "76c2a199-6daa-4069-87f0-11aa8b70708f": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/notebook-and-coffee_134x134_crop_center_2x_31cf9351-5428-4c59-bb83-40a250681189.jpg"
+          }
+        },
+        "706e04cf-7fc3-490b-90fb-d1820f90e979": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/a-woman-in-her-shop_134x134_crop_center_2x_be32bdad-5cf0-49d0-9d2f-f8ce6bc8ae8e.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "76c2a199-6daa-4069-87f0-11aa8b70708f",
+        "706e04cf-7fc3-490b-90fb-d1820f90e979"
+      ],
+      "settings": {
+        "title": "Slick Slider"
+      }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "13bb0ba5-db84-4a1d-89f6-3352c19c84f4"
   ]
 }
