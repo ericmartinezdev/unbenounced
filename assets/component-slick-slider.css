@@ -1,0 +1,21 @@
+img {
+  width: 100%;
+}
+
+.container {
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+}
+
+.slick-slider__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.slide {
+  max-width: 300px;
+}
