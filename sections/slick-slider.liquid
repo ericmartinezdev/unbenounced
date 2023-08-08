@@ -14,32 +14,43 @@
   </div>
 </section>
 
+<script>
+  const slider = document.getElementsByClassName('slick-slider')
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+  
+  slider[0].addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - slider[0].offsetLeft;
+    scrollLeft = slider[0].scrollLeft;
+  });
+
+  slider[0].addEventListener('mouseup', (e) => {
+    isDown = false;
+  });
+
+  slider[0].addEventListener('mouseleave', (e) => {
+    isDown = false;
+  });
+  
+  slider[0].addEventListener('mousemove', (e) => {
+    if(!isDown) return; // stop the fn from running
+    e.preventDefault();
+    const x = e.pageX - slider[0].offsetLeft; 
+    const walk = x - startX;
+    slider[0].scrollLeft = scrollLeft - walk;
+  });
+</script>
+
 {% schema %}
   {
     "name": "Slick Slider",
     "settings": [
       {
-        "type": "text",
-        "id": "title",
-        "label": "Slick Slider"
-      },
-      {
         "type": "collection",
         "id": "collection",
         "label": "Collection"
-      }
-    ],
-    "blocks": [
-      {
-        "name": "Slide",
-        "type": "slide",
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Image" 
-          }
-        ]
       }
     ],
     "presets": [
