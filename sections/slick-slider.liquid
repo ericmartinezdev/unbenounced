@@ -1,21 +1,18 @@
 {{ 'component-slick-slider.css' | asset_url | stylesheet_tag }}
 
-<section>
-  <div class="slick-slider">
-    <div class="container carousel">
-      <ul class="slick-slider__list row">
-        {% for product in section.settings.collection.products %}
-          <li class="slide">
-            <img src="{{ product.featured_image | image_url }}">
-          </li>
-        {% endfor %}
-      </ul>  
-    </div>
+<div class="slick">
+  <div class="slick-container row">
+    {% for product in section.settings.collection.products %}
+      <div class="slide">
+        <img draggable="false" src="{{ product.featured_image | image_url }}">
+      </div>
+    {% endfor %}
   </div>
-</section>
+</div>
+
 
 <script>
-  const slider = document.getElementsByClassName('slick-slider')
+  const slider = document.getElementsByClassName('slick')
   let isDown = false;
   let startX;
   let scrollLeft;
