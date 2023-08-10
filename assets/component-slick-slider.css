@@ -1,19 +1,22 @@
 img {
    max-width: 100%;
+   display: block;
 }
 
 .row {
   display: flex;
+  gap: .625em;
 }
 
 .slick {
   overflow: hidden;
+  padding: 3.125em;
 }
 
 .slick-container {
-  width: auto;
+  width: 150%;
 }
 
 .slide {
-  width: 18%;
+  min-width: 60vw;
 }
