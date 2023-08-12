@@ -12,31 +12,52 @@
 
 
 <script>
-  const slider = document.getElementsByClassName('slick')
+  const slider = document.getElementsByClassName('slick')[0]
   let isDown = false;
   let startX;
   let scrollLeft;
   
-  slider[0].addEventListener('mousedown', (e) => {
+  slider.addEventListener('mousedown', (e) => {
     isDown = true;
-    startX = e.pageX - slider[0].offsetLeft;
-    scrollLeft = slider[0].scrollLeft;
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    isDown = true;
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+    console.log(e.timeStamp, 'start')
   });
 
-  slider[0].addEventListener('mouseup', (e) => {
+  slider.addEventListener('mouseup', (e) => {
     isDown = false;
   });
+  slider.addEventListener('touchend', (e) => {
+    e.preventDefault();
+    isDown = false;
+    console.log(e.timeStamp, 'end')
+  });
 
-  slider[0].addEventListener('mouseleave', (e) => {
+  slider.addEventListener('mouseleave', (e) => {
     isDown = false;
   });
   
-  slider[0].addEventListener('mousemove', (e) => {
+  slider.addEventListener('mousemove', (e) => {
     if(!isDown) return; // stop the fn from running
     e.preventDefault();
-    const x = e.pageX - slider[0].offsetLeft; 
+    const x = e.pageX - slider.offsetLeft; 
     const walk = x - startX;
-    slider[0].scrollLeft = scrollLeft - walk;
+    slider.scrollLeft = scrollLeft - walk;
+  });
+
+  slider.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    if(!isDown) return; // stop the fn from running
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft; 
+    const walk = x - startX;
+    slider.scrollLeft = scrollLeft - walk;
   });
 </script>
 
