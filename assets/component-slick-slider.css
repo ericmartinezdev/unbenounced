@@ -13,10 +13,12 @@ img {
   padding: 3.125em;
 }
 
-.slick-container {
-  width: 150%;
-}
-
 .slide {
   min-width: 60vw;
+}
+
+@media (min-width: 768px) {
+  .slide {
+    min-width: 18%;
+  }
 }
