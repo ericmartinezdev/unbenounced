@@ -13,6 +13,9 @@
 
 <script>
   const slider = document.getElementsByClassName('slick')[0]
+  let isDown = false;
+  let startX;
+  let scrollLeft; // slick element distance from left (margin-left ?)
   
   // Mouse events
   slider.addEventListener('mousedown', dragStart);
@@ -25,26 +28,53 @@
   slider.addEventListener('touchmove', dragAction);
   slider.addEventListener('touchend', dragEnd);
 
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-  
-  function dragStart (e) {
+  function dragStart(e) {
     isDown = true;
     startX = e.pageX - slider.offsetLeft;
     scrollLeft = slider.scrollLeft;
+    cancelMomentumTracking();
   }
 
-  function dragAction (e) {
+  function dragAction(e) {
     if(!isDown) return; // stop the fn from running
     const x = e.pageX - slider.offsetLeft; 
-    const walk = x - startX;
+    const walk = (x - startX);
+    let prevScrollLeft = slider.scrollLeft;
     slider.scrollLeft = scrollLeft - walk;
+    velX = slider.scrollLeft - prevScrollLeft;
   }
 
-  function dragEnd (e) {
+  function dragEnd(e) {
     isDown = false;
+    beginMomentumTracking();
   }
+  
+  // Momentum
+  let velX = 0;
+  let momentumID;
+
+  function beginMomentumTracking() {
+    momentumID = requestAnimationFrame(momentumLoop);
+  }
+
+  function momentumLoop() {
+    slider.scrollLeft += velX * 2;
+    velX *= 0.95;
+    if (Math.abs(velX) > 0.5) {
+      momentumID = requestAnimationFrame(momentumLoop);
+    }
+  }
+
+  function cancelMomentumTracking() {
+    cancelAnimationFrame(momentumID);
+  }
+
+  // Scroll
+  slider.addEventListener('wheel',(e) => {
+    window.requestAnimationFrame(() => {
+      slider.scrollTo({top: 0, left: slider.scrollLeft + (e.deltaX * 2), bahavior: "smooth"});
+    });
+  });
 </script>
 
 {% schema %}
