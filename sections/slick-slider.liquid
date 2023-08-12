@@ -13,52 +13,38 @@
 
 <script>
   const slider = document.getElementsByClassName('slick')[0]
+  
+  // Mouse events
+  slider.addEventListener('mousedown', dragStart);
+  slider.addEventListener('mousemove', dragAction);
+  slider.addEventListener('mouseup', dragEnd);
+  slider.addEventListener('mouseleave', dragEnd);
+
+  // Touch events
+  slider.addEventListener('touchstart', dragStart);
+  slider.addEventListener('touchmove', dragAction);
+  slider.addEventListener('touchend', dragEnd);
+
   let isDown = false;
   let startX;
   let scrollLeft;
   
-  slider.addEventListener('mousedown', (e) => {
+  function dragStart (e) {
     isDown = true;
     startX = e.pageX - slider.offsetLeft;
     scrollLeft = slider.scrollLeft;
-  });
-  slider.addEventListener('touchstart', (e) => {
-    e.preventDefault();
-    isDown = true;
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-    console.log(e.timeStamp, 'start')
-  });
+  }
 
-  slider.addEventListener('mouseup', (e) => {
-    isDown = false;
-  });
-  slider.addEventListener('touchend', (e) => {
-    e.preventDefault();
-    isDown = false;
-    console.log(e.timeStamp, 'end')
-  });
-
-  slider.addEventListener('mouseleave', (e) => {
-    isDown = false;
-  });
-  
-  slider.addEventListener('mousemove', (e) => {
+  function dragAction (e) {
     if(!isDown) return; // stop the fn from running
-    e.preventDefault();
     const x = e.pageX - slider.offsetLeft; 
     const walk = x - startX;
     slider.scrollLeft = scrollLeft - walk;
-  });
+  }
 
-  slider.addEventListener('touchmove', (e) => {
-    e.preventDefault();
-    if(!isDown) return; // stop the fn from running
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft; 
-    const walk = x - startX;
-    slider.scrollLeft = scrollLeft - walk;
-  });
+  function dragEnd (e) {
+    isDown = false;
+  }
 </script>
 
 {% schema %}
