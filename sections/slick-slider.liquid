@@ -60,7 +60,7 @@
   function momentumLoop() {
     slider.scrollLeft += velX * 2;
     velX *= 0.95;
-    if (Math.abs(velX) > 0.5) {
+    if (Math.abs(velX) > 0.7) {
       momentumID = requestAnimationFrame(momentumLoop);
     }
   }
