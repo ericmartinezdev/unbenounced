@@ -4,7 +4,10 @@
   <div class="slick-container row">
     {% for product in section.settings.collection.products %}
       <div class="slide">
-        <img draggable="false" src="{{ product.featured_image | image_url }}">
+        <a href="{{ product.url }}" class="slide__a" draggable="false">
+          <img draggable="false" src="{{ product.featured_image | image_url }}">
+          <span class="slide__button">Shop</span>
+        </a>
       </div>
     {% endfor %}
   </div>

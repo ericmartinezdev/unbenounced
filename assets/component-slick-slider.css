@@ -17,6 +17,30 @@ img {
   min-width: 60vw;
 }
 
+.slide:hover img {
+  opacity: 33%;
+  cursor: pointer;
+}
+
+.slide:hover .slide__button {
+  display: block;
+}
+
+.slide__a {
+  position: relative;
+}
+
+.slide__button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: none;
+  border: 2px solid black;
+  color: black;
+}
+
 @media (min-width: 768px) {
   .slide {
     min-width: 18%;
