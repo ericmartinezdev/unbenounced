@@ -6,7 +6,7 @@
       <div class="slide">
         <a href="{{ product.url }}" class="slide__a" draggable="false">
           <img draggable="false" src="{{ product.featured_image | image_url }}">
-          <span class="slide__button">Shop</span>
+          <span class="slide__button">{{ section.settings.button__text }}</span>
         </a>
       </div>
     {% endfor %}
@@ -19,7 +19,11 @@
   let isDown = false;
   let startX;
   let scrollLeft; // slick element distance from left (margin-left ?)
+  let isMove = false;
   
+  // Click event
+  slider.addEventListener('click', cancelClick);
+
   // Mouse events
   slider.addEventListener('mousedown', dragStart);
   slider.addEventListener('mousemove', dragAction);
@@ -31,6 +35,7 @@
   slider.addEventListener('touchmove', dragAction);
   slider.addEventListener('touchend', dragEnd);
 
+  // fn's for behavior
   function dragStart(e) {
     isDown = true;
     startX = e.pageX - slider.offsetLeft;
@@ -40,6 +45,7 @@
 
   function dragAction(e) {
     if(!isDown) return; // stop the fn from running
+    isMove = true;
     const x = e.pageX - slider.offsetLeft; 
     const walk = (x - startX);
     let prevScrollLeft = slider.scrollLeft;
@@ -51,6 +57,14 @@
     isDown = false;
     beginMomentumTracking();
   }
+
+  function cancelClick(e) {
+    if (isMove) {
+      e.preventDefault();
+    }
+    isMove = false;
+  }
+
   
   // Momentum
   let velX = 0;
@@ -88,6 +102,11 @@
         "type": "collection",
         "id": "collection",
         "label": "Collection"
+      }, 
+      {
+        "type": "text",
+        "id": "button__text",
+        "label": "Button Label"
       }
     ],
     "presets": [
