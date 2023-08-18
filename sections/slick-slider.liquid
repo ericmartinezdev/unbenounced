@@ -6,7 +6,7 @@
       <div class="slide">
         <a href="{{ product.url }}" class="slide__a" draggable="false">
           <img draggable="false" src="{{ product.featured_image | image_url }}">
-          <span class="slide__button">{{ section.settings.button__text }}</span>
+          <span class="slide__button color-{{ section.settings.color_scheme }} {% if section.settings.transparent_button %}transparent-background{% endif %}">{{ section.settings.button__text }}</span>
         </a>
       </div>
     {% endfor %}
@@ -98,6 +98,18 @@
   {
     "name": "Slick Slider",
     "settings": [
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "Color Scheme",
+        "default": "accent-1"
+      },
+      {
+        "type": "checkbox",
+        "id": "transparent_button",
+        "label": "Transparent Button Background",
+        "default": false
+      },
       {
         "type": "collection",
         "id": "collection",
