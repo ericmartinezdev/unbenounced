@@ -1,7 +1,7 @@
 {{ 'component-slick-slider.css' | asset_url | stylesheet_tag }}
 
 <div class="slick">
-  <div class="slick-container row">
+  <div class="row">
     {% for product in section.settings.collection.products %}
       <div class="slide">
         <a href="{{ product.url }}" class="slide__a" draggable="false">
