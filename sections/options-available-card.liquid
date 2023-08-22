@@ -1,0 +1,107 @@
+<div class="container4 row4">
+  {% for product in section.settings.collection.products %}
+    <div class= "card99">
+      <div class="card99__featured-image">
+        <img class="card99__img" src="{{ product.featured_image | img_url: "500×625" }}">
+      </div>
+      <div class="product-images">
+        {% for image in product.images %}
+          <div class="img-slide">
+            <img src="{{ image | img_url }}">
+          </div>
+        {% endfor %}
+      </div>
+      <div class="card99__product-information">
+        <div class="card99__title-price"> 
+          <h2 class="card99__title">Jean Shorts</h2>
+          <div class="card99__price">
+            <span>$45</span>
+          </div>
+          <div class="card99__swatches">
+            <span>Swatches</span>
+          </div>
+        </div>
+        <div class="size-options">
+          <span>SMLXL</span>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% stylesheet %}
+  .container4 {
+    max-width: 100%;
+  }
+  .row4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+  }
+  .card99 {
+    width: 100%;
+    position: relative;
+  }
+
+  .card99:hover .card99__title-price {
+    opacity: 0;
+  }
+  
+  .img-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  .card99__img {
+    width: 100%;
+    z-index: 0;
+  }
+  .card99__featured-image:hover .card99__img {
+    opacity: 0;
+  }
+
+  .product-images  {
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+   .product-images:hover  {
+    opacity: 1;
+     z-index: 2;
+  }
+  .size-options {
+    opacity: 0;
+  }
+  .card99:hover .size-options {
+    opacity: 1;
+  }
+  .card99__title {
+    margin: 0;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+{% endstylesheet %}
+
+{% schema %}
+  {
+    "name": "Options available cards",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Options available cards"
+      }
+    ]
+  }
+{% endschema %}

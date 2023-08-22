@@ -43,14 +43,21 @@
       "type": "slick-slider",
       "settings": {
         "color_scheme": "background-2",
-        "transparent_button": false,
+        "transparent_button": true,
         "collection": "new-arrival",
         "button__text": "Shop"
+      }
+    },
+    "b3e06c66-590a-4ac6-8f45-dbe4b67a31e4": {
+      "type": "options-available-card",
+      "settings": {
+        "collection": "new-arrival"
       }
     }
   },
   "order": [
     "image_banner",
-    "13bb0ba5-db84-4a1d-89f6-3352c19c84f4"
+    "13bb0ba5-db84-4a1d-89f6-3352c19c84f4",
+    "b3e06c66-590a-4ac6-8f45-dbe4b67a31e4"
   ]
 }
