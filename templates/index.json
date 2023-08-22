@@ -42,8 +42,10 @@
     "13bb0ba5-db84-4a1d-89f6-3352c19c84f4": {
       "type": "slick-slider",
       "settings": {
-        "title": "Slick Slider",
-        "collection": "new-arrival"
+        "color_scheme": "background-2",
+        "transparent_button": false,
+        "collection": "new-arrival",
+        "button__text": "Shop"
       }
     }
   },
