@@ -1,0 +1,57 @@
+.container4 {
+  max-width: 100%;
+}
+.row4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+.card99 {
+  width: 100%;
+  position: relative;
+}
+
+.card99:hover .card99__title-price, .card99__featured-image:hover, .product-images, .size-options {
+  opacity: 0;
+}
+
+.img-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+.card99__img {
+  width: 100%;
+}
+
+.product-images {
+}
+
+.product-images:hover, .card99:hover .size-options {
+  opacity: 1;
+}
+
+.img-slide__img {
+  width: 100%;
+}
+
+.slide-btn {
+  background-color: transparent;
+  border: none;
+}
+
+.prev-slide {
+  position: absolute;
+  top: 50%;
+}
+
+.card99__title {
+  margin: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
