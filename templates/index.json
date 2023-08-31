@@ -53,21 +53,11 @@
       "settings": {
         "collection": "new-arrival"
       }
-    },
-    "6c422dac-d9ed-4281-adfd-509668bb35cf": {
-      "type": "gym-shark-card",
-      "settings": {
-        "subtitle": "gerg",
-        "title": "greg er",
-        "a__text": "g reg",
-        "collection": "new-arrival"
-      }
     }
   },
   "order": [
     "image_banner",
     "13bb0ba5-db84-4a1d-89f6-3352c19c84f4",
-    "b3e06c66-590a-4ac6-8f45-dbe4b67a31e4",
-    "6c422dac-d9ed-4281-adfd-509668bb35cf"
+    "b3e06c66-590a-4ac6-8f45-dbe4b67a31e4"
   ]
 }
