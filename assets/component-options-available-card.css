@@ -3,7 +3,7 @@
 }
 .row4 {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 5px;
 }
 .card99 {
@@ -25,9 +25,6 @@
 
 .card99__img {
   width: 100%;
-}
-
-.product-images {
 }
 
 .product-images:hover, .card99:hover .size-options {

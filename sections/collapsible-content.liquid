@@ -71,6 +71,13 @@
           {% endif %}
           <div class="grid__item">
             {%- for block in section.blocks -%}
+              {% unless block.settings.above__image == blank %} 
+                <img 
+                  srcset=""
+                  src="{{ block.settings.above__image | image_url }}"
+                  class="grid__item__img"
+                >
+               {% endunless %}
               <div
                 class="accordion{% if section.settings.layout == 'row' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}"
                 {{ block.shopify_attributes }}
@@ -81,6 +88,7 @@
                     open
                   {% endif %}
                 >
+                
                   <summary id="Summary-{{ block.id }}-{{ section.id }}">
                     {% render 'icon-accordion', icon: block.settings.icon %}
                     <h3 class="accordion__title inline-richtext h4">
@@ -282,6 +290,11 @@
       "type": "collapsible_row",
       "name": "t:sections.collapsible_content.blocks.collapsible_row.name",
       "settings": [
+        {
+          "type": "image_picker",
+          "id": "above__image",
+          "label": "Above Image"
+        },
         {
           "type": "text",
           "id": "heading",

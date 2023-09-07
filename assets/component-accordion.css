@@ -56,3 +56,11 @@
 .accordion__content img {
   max-width: 100%;
 }
+
+.accordion__title {
+  margin: 0 auto;
+}
+
+.grid__item__img {
+  max-width: 100%;
+}
