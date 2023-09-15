@@ -43,6 +43,7 @@
 .prev-slide {
   position: absolute;
   top: 50%;
+  z-index: 5;
 }
 
 .card99__title {
