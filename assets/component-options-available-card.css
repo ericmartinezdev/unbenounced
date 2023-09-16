@@ -8,7 +8,6 @@
 }
 .card99 {
   width: 100%;
-  position: relative;
 }
 
 .card99:hover .card99__title-price, .card99__featured-image:hover, .product-images, .size-options {
@@ -27,6 +26,10 @@
   width: 100%;
 }
 
+.card99__card {
+  position: relative;
+}
+
 .product-images:hover, .card99:hover .size-options {
   opacity: 1;
 }
@@ -38,12 +41,21 @@
 .slide-btn {
   background-color: transparent;
   border: none;
+  display: none;
+  cursor: pointer;
 }
 
 .prev-slide {
   position: absolute;
   top: 50%;
-  z-index: 5;
+  z-index: 1;
+}
+
+.next-slide {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 1;
 }
 
 .card99__title {
@@ -51,5 +63,11 @@
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+@media screen and (min-width: 650px) {
+  .slide-btn {
+    display: block;
+  }
 }
 
