@@ -1,6 +1,6 @@
 .container4 {
-  max-width: 100%;
-  background-color: #f8f8f8;
+  width: 95%;
+  margin: 0 auto;
 }
 .row4 {
   display: grid;

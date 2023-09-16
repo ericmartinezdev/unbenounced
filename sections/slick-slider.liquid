@@ -1,15 +1,17 @@
 {{ 'component-slick-slider.css' | asset_url | stylesheet_tag }}
 
-<div class="slick">
-  <div class="row">
-    {% for product in section.settings.collection.products %}
-      <div class="slide">
-        <a href="{{ product.url }}" class="slide__a" draggable="false">
-          <img draggable="false" src="{{ product.featured_image | image_url }}">
-          <span class="slide__button color-{{ section.settings.color_scheme }} {% if section.settings.transparent_button %}transparent-background{% endif %}">{{ section.settings.button__text }}</span>
-        </a>
-      </div>
-    {% endfor %}
+<div class="slick__container color-{{ section.settings.color_scheme }}">
+  <div class="slick">
+    <div class="row">
+      {% for product in section.settings.collection.products %}
+        <div class="slide">
+          <a href="{{ product.url }}" class="slide__a" draggable="false">
+            <img draggable="false" src="{{ product.featured_image | image_url }}">
+            <span class="slide__button color-{{ section.settings.color_scheme }} {% if section.settings.transparent_button %}transparent-background{% endif %}">{{ section.settings.button__text }}</span>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </div>
 

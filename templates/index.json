@@ -12,6 +12,7 @@
     "b3e06c66-590a-4ac6-8f45-dbe4b67a31e4": {
       "type": "options-available-card",
       "settings": {
+        "collection_title": "The best collection around",
         "collection": "new-arrival"
       }
     }
