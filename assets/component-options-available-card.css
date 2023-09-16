@@ -5,8 +5,17 @@
 .row4 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 5px;
+  gap: 8.5px;
 }
+
+.oac__title {
+  margin: 0;
+  padding: 1em 0;
+  font-size: 12px;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
 .card99 {
   width: 100%;
 }
