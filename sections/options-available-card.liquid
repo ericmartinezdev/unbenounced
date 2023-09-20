@@ -1,15 +1,19 @@
 {{ 'component-options-available-card.css' | asset_url | stylesheet_tag }}
 
+{% style %}
+  .options-available-card__title, .card99__title, .card99__product-information {
+    color: {{ section.settings.text__color }};
+  }
+{% endstyle %}
+
 <div class="color-{{ section.settings.color_scheme }}">
   <div class="container4">
-    <h3 class="oac__title">{{ section.settings.collection_title }}</h3>
+    <h3 class="options-available-card__title">{{ section.settings.collection_title }}</h3>
     <div class="row4">
       {% for product in section.settings.collection.products %}
         <div class= "card99">
           <div class="card99__card">
             <div class="card99__featured-image">
-              {{ product.featured_media.height }}
-              {{ product.featured_image.width }}
               <img 
                 srcset="
                   {% if product.featured_media.width >= 165 %}{{ product.featured_media | image_url: width: 165 }} 165w,{% endif %}

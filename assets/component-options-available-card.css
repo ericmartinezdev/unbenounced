@@ -8,10 +8,9 @@
   gap: 8.5px;
 }
 
-.oac__title {
+.options-available-card__title {
   margin: 0;
   padding: 1em 0;
-  font-size: 12px;
   font-size: 1.25rem;
   text-transform: uppercase;
 }
@@ -34,6 +33,7 @@
 
 .card99__img {
   width: 100%;
+  height: auto;
 }
 
 .card99__card {
@@ -46,6 +46,7 @@
 
 .img-slide__img {
   width: 100%;
+  height: auto;
 }
 
 .slide-btn {
