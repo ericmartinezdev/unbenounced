@@ -10,7 +10,7 @@ img {
 
 .slick {
   overflow: hidden;
-  padding: 3.125em;
+  padding: 3.125em .9em;
 }
 
 .slide {
@@ -21,6 +21,10 @@ img {
 .slide:hover img {
   opacity: 33%;
   cursor: pointer;
+}
+
+.slide__img {
+  height: auto;
 }
 
 .slide:hover .slide__button {
