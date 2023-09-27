@@ -4,6 +4,9 @@
   .options-available-card__title, .card99__title, .card99__product-information {
     color: {{ section.settings.text__color }};
   }
+  .color-swatches__item:first-child {
+    border: 1px solid {{ section.settings.text__color }};
+  }
 {% endstyle %}
 
 <script src="{{ 'options-available-card.js' | asset_url }}" defer="defer"></script>
@@ -81,7 +84,13 @@
                 <span>{{ product.price | money }}</span>
               </div>
               <div class="card99__swatches">
-                <span>Swatches</span>
+                {%- if product.metafields.product_info.color.type == "list.color" -%}
+                  <div class="color-swatches">
+                    {%- for color in product.metafields.product_info.color.value -%}
+                      <div class="color-swatches__item" style="background-color:{{color}};">&nbsp;</div>
+                    {%- endfor -%}
+                  </div>
+                {%- endif -%}
               </div>
             </div>
             <div class="size-options">

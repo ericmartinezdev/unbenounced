@@ -23,6 +23,11 @@
   opacity: 0;
 }
 
+
+.card99:hover .card99__title-price, .card99__featured-image:hover, .size-options {
+  opacity: 0;
+}
+
 .img-slide {
   position: absolute;
   inset: 0;
@@ -43,6 +48,10 @@
 }
 
 .product-images:hover, .card99:hover .size-options {
+  opacity: 1;
+}
+
+.card99:hover .size-options {
   opacity: 1;
 }
 
@@ -94,6 +103,21 @@
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+.color-swatches {
+  display: flex; 
+  gap: .34em;
+}
+
+.color-swatches__item {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+
+  /* Need to figure out how to make the border a darker color. The line below is a failed attempt */
+  border: 1px solid;
+  border-color: rgba(18, 18, 18, 0.04); 
 }
 
 @media screen and (min-width: 650px) {
