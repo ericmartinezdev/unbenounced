@@ -76,9 +76,9 @@
           </div>   
           <div class="card99__product-information">
             <div class="card99__title-price"> 
-              <h2 class="card99__title">Jean Shorts</h2>
+              <h2 class="card99__title">{{ product.title }}</h2>
               <div class="card99__price">
-                <span>$45</span>
+                <span>{{ product.price | money }}</span>
               </div>
               <div class="card99__swatches">
                 <span>Swatches</span>
